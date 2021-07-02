@@ -15,7 +15,15 @@ import { AppRoutingModule } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './views/register/register.component';
 import { LoginComponent } from './views/login/login.component';
-
+import { AutoTabDirective, AutoTabDirectivePrev } from './shared/directives/autotabdirective';
+import { NumberDirective } from './shared/directives/numbers-only.directive';
+import { SharedModule } from './shared/shared.module';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 
 
 //***************  TEST FIREBASE CONFIGURATION  ******************/
@@ -44,7 +52,16 @@ import { LoginComponent } from './views/login/login.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    SharedModule,
+    OtpVerificationComponent,
+    AutoTabDirective,
+    AutoTabDirectivePrev,
     
    
   ],
@@ -55,8 +72,10 @@ import { LoginComponent } from './views/login/login.component';
    
   ],
   providers: [
-    
-   
+
+    MatDatepickerModule,
+    MatNativeDateModule,
+    AngularFireAuth 
   ],
   bootstrap: [ AppComponent ]
 })
