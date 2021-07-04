@@ -1,29 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-
-
 import { AppComponent } from './app.component';
-
-
 // Import routing module
 import { AppRoutingModule } from './app.routing';
-
 // Import 3rd party components
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './views/register/register.component';
 import { LoginComponent } from './views/login/login.component';
-import { AutoTabDirective, AutoTabDirectivePrev } from './shared/directives/autotabdirective';
-import { NumberDirective } from './shared/directives/numbers-only.directive';
-import { SharedModule } from './shared/shared.module';
+//import { AutoTabDirective, AutoTabDirectivePrev } from './shared/directives/autotabdirective';
+//import { NumberDirective } from './shared/directives/numbers-only.directive';
+//import { SharedModule } from './shared/shared.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 
 
 //***************  TEST FIREBASE CONFIGURATION  ******************/
@@ -56,26 +49,25 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    SharedModule,
-    OtpVerificationComponent,
-    AutoTabDirective,
-    AutoTabDirectivePrev,
+    //AngularFireModule.initializeApp(firebaseConfig),
+    //AngularFireAuthModule,
+    //SharedModule,
+    //OtpVerificationComponent,
+    //AutoTabDirective,
+    //AutoTabDirectivePrev,
     
    
   ],
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
-   
+    LoginComponent,   
   ],
   providers: [
 
     MatDatepickerModule,
     MatNativeDateModule,
-    AngularFireAuth 
+    //AngularFireAuth 
   ],
   bootstrap: [ AppComponent ]
 })

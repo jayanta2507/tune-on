@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  apiURL: 'http://45.90.108.110:3000/artist/',
-  imageURL: 'http://45.90.108.110:3000',
-  songURL: 'http://45.90.108.110:3000'
+  apiURL: 'http://localhost:3000/artist/',
+  adminURL: 'http://localhost:3000/admin/', 
+  imageURL: 'http://localhost:3000',
+  songURL: 'http://localhost:3000'
 };
