@@ -1,19 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService {
 
-  	constructor(
-  	private toasterService: ToastrService,
-    private router: Router) 
-  	{ }
+  constructor(
+    private toasterService: ToastrService,
+    private router: Router
+  ) { }
 
+  /**
+   * Shows success
+   * @param msg 
+   */
+  showSuccess(msg) {
+    this.toasterService.success(msg, '', {
+      timeOut: 3500,
+      positionClass: 'toast-bottom-right'
+    });
+  }
+/**
+   * Shows error
+   * @param msg 
+   */
+  showError(msg) {
+    this.toasterService.error(msg, '', {
+      timeOut: 3500,
+      positionClass: 'toast-bottom-right'
+    });
+  }
 
-  	/**
+  /**
    * Handles error
    * @template T 
    * @param [operation] 

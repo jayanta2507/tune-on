@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 // Import routing module
 import { AppRoutingModule } from './app.routing';
-// Import 3rd party components
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './views/register/register.component';
@@ -15,6 +16,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { UploadDocumentComponent } from './views/upload-document/upload-document.component';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -49,6 +51,8 @@ import { MatInputModule } from '@angular/material/input';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
     //AngularFireModule.initializeApp(firebaseConfig),
     //AngularFireAuthModule,
     //SharedModule,
@@ -61,7 +65,8 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent,   
+    LoginComponent,
+    UploadDocumentComponent   
   ],
   providers: [
 
