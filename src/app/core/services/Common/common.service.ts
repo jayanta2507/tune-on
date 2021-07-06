@@ -22,9 +22,6 @@ export class CommonService {
     ) { }
 
 
-  	
-
-
 
   	// Post API Call
 	postAPICall(requestData: any) {
@@ -37,9 +34,10 @@ export class CommonService {
 			headers = headers.append('Accept', 'application/json');
 		}
 
-		if(localStorage.getItem('artist-access-token')) {
+		if(localStorage.getItem('access-token')) {
 			headers = headers.append('Authorization', `Bearer ${localStorage.getItem('artist-access-token')}`)
 		}
+
 
 		return this.http.post<any>(this.apiURL + requestData.url, requestData.data, { headers })
 		.pipe(
@@ -57,7 +55,7 @@ export class CommonService {
 	      headers = headers.append('Accept', 'application/json');
 	    }
 
-	    if(localStorage.getItem('artist-access-token')) {
+	    if(localStorage.getItem('access-token')) {
 	      headers = headers.append('Authorization', `Bearer ${localStorage.getItem('artist-access-token')}`)
 	    }
 
@@ -86,7 +84,7 @@ export class CommonService {
 		  headers = headers.append('Accept', 'application/json');
 		}
 
-		if(localStorage.getItem('artist-access-token')) {
+		if(localStorage.getItem('access-token')) {
 		  headers = headers.append('Authorization', `Bearer ${localStorage.getItem('artist-access-token')}`)
 		}
 
@@ -115,7 +113,7 @@ export class CommonService {
 		  	headers = headers.append('Accept', 'application/json');
 		}
 
-		if(localStorage.getItem('artist-access-token')) {
+		if(localStorage.getItem('access-token')) {
 		  	headers = headers.append('Authorization', `Bearer ${localStorage.getItem('artist-access-token')}`)
 		}
 

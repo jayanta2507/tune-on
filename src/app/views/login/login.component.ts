@@ -9,12 +9,14 @@ import firebase from 'firebase/app';
 
 //import { noSpace } from '../../shared/custom-validators/nospacesvalidator';
 
+declare var $: any;
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
 	loginForm:FormGroup;
@@ -24,56 +26,63 @@ export class LoginComponent implements OnInit {
 	
 
   constructor(
-   private fb: FormBuilder, 
+    private fb: FormBuilder, 
     private helperService: HelperService,
     private commonService: CommonService,
     private router: Router
-   ) { }
-
-  ngOnInit(): void {
-  this.createForm();
+   ) { 
+    //console.log(this.fb)
   }
 
-   createForm() {
+  ngOnInit(): void {
+    this.createForm();
+
+  }
+
+  createForm() {
+     
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
     })
-
-    console.log(this.loginForm)
   }
 
+  // f(){
+  //   return this.login
+  // }
 
-   submitLoginForm() {
+
+  submitLoginForm() {
     this.formSubmitted = true;
-    console.log(this.loginForm)
+    
     if(this.loginForm.invalid) return;
 
     this.requestData.url = 'login';
     this.requestData.data = {
-      email: this.loginForm.get('email').value,
-      password: this.loginForm.get('password').value
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
     }
-
+    
     this.isLoading = true;
     this.commonService.postAPICall(this.requestData).subscribe((result)=>{
+
       this.isLoading = false;
       if(result.status == 200) {
-        localStorage.setItem('artist-access-token',result.data.access_token);
-        localStorage.setItem('artist-refresh-token',result.data.refresh_token);
+
+        localStorage.setItem('access-token',result.data.access_token);
+        localStorage.setItem('refresh-token',result.data.refresh_token);
         localStorage.setItem('is_active',result.data.is_active);
+
         this.helperService.showSuccess(result.msg);
         this.router.navigate(['/upload-document']);
       }
       else{
         this.helperService.showError(result.msg);
       }
+
     },(err)=>{
       this.isLoading = false;
       this.helperService.showError(err.error.msg);
     })
-
   }
-
-   
 }
