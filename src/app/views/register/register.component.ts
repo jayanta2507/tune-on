@@ -54,9 +54,9 @@ export class RegisterComponent implements OnInit {
   }
 
  
-  get rf() {
-    return this.regForm.controls;
-  }
+  // get rf() {
+  //   return this.regForm.controls;
+  // }
 
 
     submitRegForm() {
@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem('artist-access-token',result.data.access_token);
         localStorage.setItem('artist-refresh-token',result.data.refresh_token);
         this.helperService.showSuccess(result.msg);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/upload-document']);
       }
       else{
         this.helperService.showError(result.msg);
