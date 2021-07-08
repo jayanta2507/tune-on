@@ -17,6 +17,7 @@ import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { UploadDocumentComponent } from './views/upload-document/upload-document.component';
+import { EshaLoginComponent } from './views/esha-login/esha-login.component';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -66,7 +67,8 @@ import { UploadDocumentComponent } from './views/upload-document/upload-document
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    UploadDocumentComponent   
+    UploadDocumentComponent,
+    EshaLoginComponent   
   ],
   providers: [
 
