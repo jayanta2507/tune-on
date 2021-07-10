@@ -19,7 +19,11 @@ export class CommonService {
   		private http: HttpClient,
     	private helperService: HelperService,
     	private router: Router
-    ) { }
+    ) { 
+  		if (localStorage.getItem('access-token')) {
+  			this.router.navigate(['/upload-document'])
+  		}
+    }
 
 
 

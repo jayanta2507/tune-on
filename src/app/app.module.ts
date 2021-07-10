@@ -21,7 +21,7 @@ import { EshaLoginComponent } from './views/esha-login/esha-login.component';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //***************  TEST FIREBASE CONFIGURATION  ******************/
 // export const firebaseConfig = {
 //     apiKey: "AIzaSyBfpYU_7DfmnE9rj30SJ8ufsccKY2lmptU",
@@ -54,6 +54,7 @@ import { EshaLoginComponent } from './views/esha-login/esha-login.component';
     MatInputModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule
     //AngularFireModule.initializeApp(firebaseConfig),
     //AngularFireAuthModule,
     //SharedModule,

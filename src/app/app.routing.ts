@@ -4,6 +4,7 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { UploadDocumentComponent } from './views/upload-document/upload-document.component';
 import { EshaLoginComponent} from './views/esha-login/esha-login.component';
+import { AuthGuardService } from './core/guards/auth-guard.service';
 
 
 const routes: Routes = [{
@@ -12,7 +13,14 @@ const routes: Routes = [{
     data: {
       title: 'Login Page'
     },
-  },                     
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    },
+  },                      
   {
     path: 'register',
     component: RegisterComponent,
@@ -26,6 +34,7 @@ const routes: Routes = [{
     data: {
       title: 'Upload Document'
     },
+    canActivate: [AuthGuardService]
   },
   {
     path: 'esha-login',

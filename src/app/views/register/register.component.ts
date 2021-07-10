@@ -78,10 +78,8 @@ export class RegisterComponent implements OnInit {
     this.commonService.postAPICall(this.regRequestData).subscribe((result)=>{
       this.isLoading = false;
       if(result.status == 200) {
-        localStorage.setItem('artist-access-token',result.data.access_token);
-        localStorage.setItem('artist-refresh-token',result.data.refresh_token);
         this.helperService.showSuccess(result.msg);
-        this.router.navigate(['/upload-document']);
+        this.router.navigate(['/login']);
       }
       else{
         this.helperService.showError(result.msg);

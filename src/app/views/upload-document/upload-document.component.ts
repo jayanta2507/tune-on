@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload-document',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadDocumentComponent implements OnInit {
 
-  constructor() { }
+	constructor(private router:Router) { 
 
-  ngOnInit(): void {
-  }
+		let access_token = localStorage.getItem('access-token');
+		console.log(access_token);
+	}
+
+	ngOnInit(): void {
+	}
+
+	logout(){
+		localStorage.removeItem('access-token');
+        localStorage.removeItem('refresh-token');
+        localStorage.removeItem('is_active');
+        this.router.navigate(['/login']);
+	}
 
 }
