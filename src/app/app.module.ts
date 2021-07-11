@@ -22,6 +22,7 @@ import { EshaLoginComponent } from './views/esha-login/esha-login.component';
 // import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PriyaLoginComponent } from './views/priya-login/priya-login.component';
 //***************  TEST FIREBASE CONFIGURATION  ******************/
 // export const firebaseConfig = {
 //     apiKey: "AIzaSyBfpYU_7DfmnE9rj30SJ8ufsccKY2lmptU",
@@ -69,7 +70,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     LoginComponent,
     UploadDocumentComponent,
-    EshaLoginComponent   
+    EshaLoginComponent,
+    PriyaLoginComponent   
   ],
   providers: [
 

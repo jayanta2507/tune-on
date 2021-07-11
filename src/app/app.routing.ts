@@ -5,7 +5,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { UploadDocumentComponent } from './views/upload-document/upload-document.component';
 import { EshaLoginComponent} from './views/esha-login/esha-login.component';
 import { AuthGuardService } from './core/guards/auth-guard.service';
-
+import { PriyaLoginComponent}from './views/priya-login/priya-login.component';
 
 const routes: Routes = [{
     path: '',
@@ -42,7 +42,19 @@ const routes: Routes = [{
     data: {
       title: 'Esha Login'
     },
-  }];
+
+  },
+  {
+    path: 'priya-login',
+    component: PriyaLoginComponent,
+    data: {
+      title: 'Priya Login'
+    },
+  }
+
+
+  
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
