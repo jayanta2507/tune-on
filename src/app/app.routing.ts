@@ -50,6 +50,10 @@ const routes: Routes = [{
     data: {
       title: 'Priya Login'
     },
+  },
+  {
+    path: '',
+    loadChildren: () => import('./views/pages/pages.module').then(m => m.PagesModule),
   }
 
 

@@ -23,6 +23,7 @@ import { EshaLoginComponent } from './views/esha-login/esha-login.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PriyaLoginComponent } from './views/priya-login/priya-login.component';
+import { ViewsModule } from './views/views.module';
 //***************  TEST FIREBASE CONFIGURATION  ******************/
 // export const firebaseConfig = {
 //     apiKey: "AIzaSyBfpYU_7DfmnE9rj30SJ8ufsccKY2lmptU",
@@ -55,7 +56,8 @@ import { PriyaLoginComponent } from './views/priya-login/priya-login.component';
     MatInputModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ViewsModule
     //AngularFireModule.initializeApp(firebaseConfig),
     //AngularFireAuthModule,
     //SharedModule,
@@ -71,7 +73,7 @@ import { PriyaLoginComponent } from './views/priya-login/priya-login.component';
     LoginComponent,
     UploadDocumentComponent,
     EshaLoginComponent,
-    PriyaLoginComponent   
+    PriyaLoginComponent,
   ],
   providers: [
 
