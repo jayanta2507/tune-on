@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EshaLoginComponent } from './esha-login.component';
+import { ViewsComponent } from './views.component';
 
-describe('EshaLoginComponent', () => {
-  let component: EshaLoginComponent;
-  let fixture: ComponentFixture<EshaLoginComponent>;
+describe('ViewsComponent', () => {
+  let component: ViewsComponent;
+  let fixture: ComponentFixture<ViewsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EshaLoginComponent ]
+      declarations: [ ViewsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EshaLoginComponent);
+    fixture = TestBed.createComponent(ViewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-//import { IconSetService } from '@coreui/icons-angular';
-//import { freeSet } from '@coreui/icons';
-
 @Component({
   // tslint:disable-next-line
-  selector: 'body',
-  template: '<router-outlet></router-outlet>'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
   
 })
 export class AppComponent implements OnInit {
+
+  isHeader: boolean = true;
+
   constructor(
     private router: Router,
-    //public iconSet: IconSetService
   ) {
-    // iconSet singleton
-   // iconSet.icons = { ...freeSet };
+
   }
 
   ngOnInit() {
@@ -25,6 +24,28 @@ export class AppComponent implements OnInit {
         return;
       }
       window.scrollTo(0, 0);
+    });
+
+    this.getAccess();
+  }
+
+
+  getAccess(){
+    this.router.events.subscribe( (event) => {
+      if (event instanceof NavigationEnd) {
+
+        let str = event.url;
+        str = str.replace(/\//g, '');
+
+        console.log(str)
+
+        if(str=='' || str=='login' || str=='register'){
+          this.isHeader = false;
+        }else{
+          this.isHeader = true;
+        }
+        
+      }
     });
   }
 }

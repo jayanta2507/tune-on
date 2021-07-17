@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('is_active',result.data.is_active);
 
         this.helperService.showSuccess(result.msg);
-        this.router.navigate(['/upload-document']);
+        this.router.navigate(['/dashboard']);
       }
       else{
         this.helperService.showError(result.msg);

@@ -21,7 +21,7 @@ export class CommonService {
     	private router: Router
     ) { 
   		if (localStorage.getItem('access-token')) {
-  			this.router.navigate(['/upload-document'])
+  			this.router.navigate(['/dashboard'])
   		}
     }
 
