@@ -1,6 +1,10 @@
 <div class="wrapper">
 
 	<app-header *ngIf="isHeader"></app-header>
+	 <app-view-header *ngIf = "isViewHeader"></app-view-header>
 	<router-outlet></router-outlet>
+		 <app-view-footer *ngIf = "isViewHeader"></app-view-footer> 
 	<app-footer *ngIf="isHeader"></app-footer>
+
+   
 </div>

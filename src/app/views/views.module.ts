@@ -6,6 +6,8 @@ import { ViewsRoutingModule } from './views-routing.module';
 import { ViewsComponent } from './views.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+// import { ViewHeaderComponent } from './view-header/view-header.component';
+// import { ViewFooterComponent } from './view-footer/view-footer.component';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import { RegisterComponent } from './register/register.component';
     ViewsComponent,
     LoginComponent,
     RegisterComponent,
+    // ViewHeaderComponent,
+    // ViewFooterComponent,
   ],
   imports: [
     CommonModule,

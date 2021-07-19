@@ -11,7 +11,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
 
   isHeader: boolean = true;
-
+  isViewHeader: boolean = false;
   constructor(
     private router: Router,
   ) {
@@ -44,8 +44,15 @@ export class AppComponent implements OnInit {
         }else{
           this.isHeader = true;
         }
+         if( str==''){
+          this.isViewHeader = true;
+        }else{
+          this.isViewHeader = false;
+        }
+
         
       }
     });
   }
+    
 }
