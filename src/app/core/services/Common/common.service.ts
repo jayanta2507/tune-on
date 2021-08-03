@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CommonService {
 	apiURL: string = environment.apiURL;
+	apiLink: string = environment.apiLink;
 	adminURL: string = environment.adminURL;
 
 
@@ -43,7 +44,7 @@ export class CommonService {
 		}
 
 
-		return this.http.post<any>(this.apiURL + requestData.url, requestData.data, { headers })
+		return this.http.post<any>(this.apiLink + requestData.url, requestData.data, { headers })
 		.pipe(
 		    catchError(this.helperService.handleError('error ', []))
 		);
