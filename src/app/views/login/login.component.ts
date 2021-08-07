@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
     
     if(this.loginForm.invalid) return;
 
-    this.requestData.url = 'login';
+    this.requestData.url = 'auth/login';
     this.requestData.data = {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
@@ -69,9 +69,9 @@ export class LoginComponent implements OnInit {
       this.isLoading = false;
       if(result.status == 200) {
 
-        localStorage.setItem('access-token',result.data.access_token);
-        localStorage.setItem('refresh-token',result.data.refresh_token);
-        localStorage.setItem('is_active',result.data.is_active);
+        localStorage.setItem('access-token',result.access_token);
+        localStorage.setItem('refresh-token',result.refresh_token);
+        localStorage.setItem('is_active',result.isVerified);
 
         this.helperService.showSuccess(result.msg);
         this.router.navigate(['/dashboard']);

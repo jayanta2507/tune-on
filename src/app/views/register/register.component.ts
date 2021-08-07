@@ -60,44 +60,46 @@ export class RegisterComponent implements OnInit {
 
 
     submitRegForm() {
-    this.regFormSubmitted = true;
-    if(this.regForm.invalid) return;
+      this.regFormSubmitted = true;
+      if(this.regForm.invalid) return;
 
-    this.regRequestData.url = 'register';
-    this.regRequestData.data = {
-      full_name: this.regForm.get('full_name').value,
-      email: this.regForm.get('email').value,
-      mobile_no: this.regForm.get('mobile_no').value,
-      password: this.regForm.get('password').value,
-      confirm_password: this.regForm.get('confirm_password').value,
-      dob: moment(this.regForm.get('dob').value).format('YYYY-MM-DD'),
-      country_id: this.regForm.get('country_id').value
+      this.regRequestData.url = 'auth/registration';
+      this.regRequestData.data = {
+        full_name: this.regForm.get('full_name').value,
+        email: this.regForm.get('email').value,
+        mobile_no: this.regForm.get('mobile_no').value,
+        password: this.regForm.get('password').value,
+        confirm_password: this.regForm.get('confirm_password').value,
+        dob: moment(this.regForm.get('dob').value).format('YYYY-MM-DD'),
+        country_id: this.regForm.get('country_id').value
+      }
+
+      this.isLoading = true;
+      this.commonService.postAPICall(this.regRequestData).subscribe((result)=>{
+        this.isLoading = false;
+        if(result.status == 200) {
+          this.helperService.showSuccess(result.msg);
+          this.router.navigate(['/login']);
+        }
+        else{
+          this.helperService.showError(result.msg);
+        }
+      },(err)=>{
+        this.isLoading = false;
+        this.helperService.showError(err.error.msg);
+      })
     }
 
-    this.isLoading = true;
-    this.commonService.postAPICall(this.regRequestData).subscribe((result)=>{
-      this.isLoading = false;
-      if(result.status == 200) {
-        this.helperService.showSuccess(result.msg);
-        this.router.navigate(['/login']);
-      }
-      else{
-        this.helperService.showError(result.msg);
-      }
-    },(err)=>{
-      this.isLoading = false;
-      this.helperService.showError(err.error.msg);
-    })
-  }
-
    fetchCountries() {
-    this.commonRequestData.url = 'active-countries';
+    this.commonRequestData.url = 'home/active-countries';
 
     this.isLoading = true;
     this.commonService.getAPICall(this.commonRequestData).subscribe((result)=>{
       this.isLoading = false;
       if(result.status == 200) {
-        this.countries = result.data.countries;
+        this.countries = result.data;
+
+        console.log(this.countries)
       }
       else{
         this.helperService.showError(result.msg);

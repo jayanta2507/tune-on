@@ -72,7 +72,7 @@ export class CommonService {
 	      }
 	    }
 
-	    return this.http.get<any>(this.apiURL + requestData.url, { headers, params })
+	    return this.http.get<any>(this.apiLink + requestData.url, { headers, params })
 	      .pipe(
 	        catchError(this.helperService.handleError('error ', []))
 	    );
