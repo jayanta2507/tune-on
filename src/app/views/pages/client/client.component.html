@@ -1,0 +1,74 @@
+<div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-md-8">
+             <div class="input-group">
+
+                    <input type="text" class="form-control search_field" name="searchText" placeholder="Search by Client" (input)="startSearch()" [(ngModel)]="searchText" (click)="sortKeyF()">
+
+                    <div class="input-group-append search_button">
+                        <button  class="btn btn-danger search_button_style" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button class="btn btn-danger search_button_style" type="button" *ngIf="searchText!=''">
+                          <i class="fa fa-times" (click)="clearSearch()"></i>
+                        </button>
+                    </div>
+                <div>
+                    <button class="btn btn-primary" routerLink="/clientadd"><i _ngcontent-jlk-c84="" class="fa fa-plus fa-md"></i> Add Client</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+          	<div class="podcast_table">
+                <table class="table table-striped podcast_table_inner">
+                    <thead>
+                        <tr>
+                             <th width="10%">Sl No.</th>
+                             <th width="15%">Name</th>
+                                <th width="10%">Title</th>
+                                <th width="10%">Email Address</th>
+                                <th width="10%">Phone</th>
+                                <th width="10%">Country</th>
+                                <th width="10%">Engagement Manager</th>
+                                <th width="10%">Podcast</th>
+                                <th width="40%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let  clientList of client; let i = index;"  >
+                            <tr class="row_shadow" >
+                                <td valign="middle">{{i + 1}}</td>
+                                 <td valign="middle">{{clientList.name}}</td>
+                                <td valign="middle">{{clientList.title}}</td>
+                                <td valign="middle">{{clientList.email}}</td>                                 
+                                <td valign="middle">{{clientList.phone}}</td>
+                                <td valign="middle">{{clientList.country}}</td>
+                                <td valign="middle">{{clientList.selectPodcast}}</td>
+                                <td valign="middle">{{clientList.selectEngagementManager}}</td>
+                                <td valign="middle"><div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                        <a class="btn btn-light btn-sm" title="Details"  (click)="navigateToDetails(clientList.id)">
+                                        <i class="fa fa-eye fa-lg"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                        <a class="btn btn-light btn-sm" title="Edit" (click)="navigateToEdit(clientList.id)">
+                                        <i class="fa fa-edit fa-lg"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                        <a class="btn btn-light btn-sm" title="Delete" (click)="openDeleteConfirmation(clientList.id)">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                        </a>
+                                    </div></td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+                </div>
+  </div>
+ 

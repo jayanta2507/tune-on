@@ -1,0 +1,44 @@
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Create New Client</h1>
+          </div>
+             </div>
+                  </div>
+                 <form [formGroup]="addForm"  (ngSubmit)="submitClient()">
+                      <div class="form-row">
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="title"placeholder="">
+                       </div>
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="name" placeholder="">
+                       </div>
+                     </div><br><br>
+                     <div class="form-row">
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="selectPodcast"  placeholder="{{clientDetails?.selectPodcast}}">
+                       </div>
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="selectEngagementManager" placeholder="">
+                       </div>
+                     </div><br><br>
+                     <div class="form-row">
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="country"  placeholder="">
+                       </div>
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="phone"  placeholder="">
+                       </div>
+                     </div><br><br>
+                      <div class="col-12">
+                    <button type="submit"  class="btn btn btn-success">Add Client</button>
+                    </div>
+                   </form>
+                        </div>
+                        </div>
+
+  

@@ -41,19 +41,17 @@ export class RegisterComponent implements OnInit {
 
   createRegForm() {
     this.regForm = this.fb.group({
-      full_name: ['', [Validators.required]],
+      name: ['', [Validators.required]],
       email: ['', [Validators.required,Validators.email]],
-      mobile_no: ['', [Validators.required, Validators.minLength(10)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirm_password: ['', [Validators.required, Validators.minLength(6)]],
-      country_id: ['', [Validators.required]],
-      dob: ['', [Validators.required]]
+      contact: ['', [Validators.required, Validators.maxLength(15)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      title: ['', [Validators.required]]
+      
     });
     console.log(this.regForm)
 
   }
-
- 
+    
   // get rf() {
   //   return this.regForm.controls;
   // }
@@ -65,13 +63,13 @@ export class RegisterComponent implements OnInit {
 
       this.regRequestData.url = 'auth/registration';
       this.regRequestData.data = {
-        full_name: this.regForm.get('full_name').value,
+        name: this.regForm.get('name').value,
         email: this.regForm.get('email').value,
-        mobile_no: this.regForm.get('mobile_no').value,
+        contact: this.regForm.get('contact').value,
         password: this.regForm.get('password').value,
-        confirm_password: this.regForm.get('confirm_password').value,
-        dob: moment(this.regForm.get('dob').value).format('YYYY-MM-DD'),
-        country_id: this.regForm.get('country_id').value
+        title: this.regForm.get('title').value
+        
+       
       }
 
       this.isLoading = true;
@@ -79,7 +77,7 @@ export class RegisterComponent implements OnInit {
         this.isLoading = false;
         if(result.status == 200) {
           this.helperService.showSuccess(result.msg);
-          this.router.navigate(['/login']);
+          this.router.navigate(['/dashboard']);
         }
         else{
           this.helperService.showError(result.msg);

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClientComponent } from './client/client.component';
 import { PagesComponent } from './pages.component';
+import { ClientAddComponent } from './client-add/client-add.component';
 import { AuthGuardService } from '../../core/guards/auth-guard.service';
-
+import { ClientDetailsComponent } from './client-details/client-details.component';
+import { ClientEditComponent } from './client-edit/client-edit.component';
 
 const routes: Routes = [
     {
@@ -13,8 +16,30 @@ const routes: Routes = [
     {
       path: 'dashboard',
       component: DashboardComponent,
+      canActivate: [AuthGuardService] 
+    },
+    {
+      path: 'client',
+      component: ClientComponent,
       canActivate: [AuthGuardService]
-    }
+    },
+    {
+      path: 'clientadd',
+      component: ClientAddComponent,
+      canActivate: [AuthGuardService]
+    },
+    {
+      path: 'client-details/:id',
+      component: ClientDetailsComponent,
+      canActivate: [AuthGuardService]
+    },
+    {
+      path: 'client-edit/:id',
+      component: ClientEditComponent,
+      canActivate: [AuthGuardService]
+    },
+
+
 ];
 
 @NgModule({

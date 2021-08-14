@@ -1,0 +1,44 @@
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Create New Client</h1>
+          </div>
+             </div>
+                  </div>
+                 <form [formGroup]="addForm">
+                      <div class="form-row">
+                       <div class="col-5">
+                         <strong>Title:</strong>{{clientDetails?.title}}
+                       </div>
+                       <div class="col-5">
+                         <strong>Name:</strong>{{clientDetails?.name}}          
+                       </div>
+                     </div><br><br>
+                     <div class="form-row">
+                       <div class="col-5">
+                         <strong>Select Podcast:</strong>{{clientDetails?.selectPodcast}}
+                       </div>
+                       <div class="col-5">
+                         <strong>Select Engagement Manager:</strong>{{clientDetails?.selectEngagementManager}}
+                       </div>
+                     </div><br><br>
+                     <div class="form-row">
+                       <div class="col-5">
+                         <strong>Country:</strong>{{clientDetails?.country}}
+                       </div>
+                       <div class="col-5">
+                         <strong>Phone:</strong>{{clientDetails?.phone}}
+
+                     </div><br><br>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  
+                        
+
+
