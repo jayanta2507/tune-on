@@ -14,7 +14,6 @@ import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { ViewHeaderComponent } from './views/view-header/view-header.component';
 import { ViewFooterComponent } from './views/view-footer/view-footer.component';
-import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/common';
 
 
 
