@@ -31,18 +31,17 @@ export class ClientAddComponent implements OnInit {
 
   	createAddForm() {
 	    this.addForm = this._formBuilder.group({
-			title: ['', [Validators.required]],
-			name: ['', [Validators.required]],
-			email: ['', [Validators.required]],
-			selectEngagementManager: ['', [Validators.required]],
-			country: ['', [Validators.required]],
-			phone: ['', [Validators.required]],
-			price: ['', [Validators.required]],
-			selectPodcast: ['', [Validators.required]],
-			password:['',[Validators.required]]
-			
+				title: ['', [Validators.required]],
+				name: ['', [Validators.required]],
+				email: ['', [Validators.required]],
+				selectEngagementManager: ['', [Validators.required]],
+				country: ['', [Validators.required]],
+				phone: ['', [Validators.required]],
+				price: ['', [Validators.required]],
+				selectPodcast: ['', [Validators.required]],
+				password:['',[Validators.required]]
   		})
-	}
+		}
 
 	createClient(){
 		this.formSubmitted = true;

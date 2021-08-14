@@ -8,6 +8,13 @@ import { ClientAddComponent } from './client-add/client-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { ClientEditComponent } from './client-edit/client-edit.component';
+import { AnalystListComponent } from './analyst/analyst-list/analyst-list.component';
+import { AnalystAddComponent } from './analyst/analyst-add/analyst-add.component';
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 //import { HeaderComponent } from './header/header.component';
 
@@ -19,13 +26,22 @@ import { ClientEditComponent } from './client-edit/client-edit.component';
     ClientAddComponent,
     ClientDetailsComponent,
     ClientEditComponent,
+    AnalystListComponent,
+    AnalystAddComponent,
     //HeaderComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+  ],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ],
 })
 export class PagesModule { }

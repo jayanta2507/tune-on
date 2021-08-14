@@ -1,0 +1,92 @@
+  <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  	<!-- Content Header (Page header) -->
+  	<div class="content-header">
+  		<div class="container-fluid">
+  			<div class="row mb-2">
+  				<div class="col-sm-6">
+  					<h1 class="m-0">Create New Analyst</h1>
+  				</div>
+  			</div>
+  		</div>
+  		<form [formGroup]="addForm" autocomplete="off" (ngSubmit)="createAnalyst()">
+  			<div class="form-row">
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="title" placeholder="Title">
+
+  					<mat-error *ngIf="formSubmitted && f.title.errors" class="text-danger">
+                        <div *ngIf="f.title.errors.required">*Please enter title</div>
+                    </mat-error>
+  				</div>
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="name" placeholder="Name">
+
+  					<mat-error *ngIf="formSubmitted && f.name.errors" class="text-danger">
+                        <div *ngIf="f.name.errors.required">*Please enter name</div>
+                    </mat-error>
+  				</div>
+  			</div><br><br>
+  			<div class="form-row">
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="email"  placeholder="Email Address">
+  					<mat-error *ngIf="formSubmitted && f.email.errors" class="text-danger">
+                        <div *ngIf="f.email.errors.required">*Please enter email</div>
+                    </mat-error>
+  				</div>
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="phone"  placeholder="Phone">
+  					<mat-error *ngIf="formSubmitted && f.phone.errors" class="text-danger">
+                        <div *ngIf="f.phone.errors.required">*Please enter phone</div>
+                    </mat-error>
+  				</div>
+  			</div><br><br>
+  			<div class="form-row">
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="organization"  placeholder="Organization">
+  					<mat-error *ngIf="formSubmitted && f.organization.errors" class="text-danger">
+                        <div *ngIf="f.organization.errors.required">*Please enter organization</div>
+                    </mat-error>
+  				</div>
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="address"  placeholder="Address">
+  					<mat-error *ngIf="formSubmitted && f.address.errors" class="text-danger">
+                        <div *ngIf="f.address.errors.required">*Please enter address</div>
+                    </mat-error>
+  				</div>
+  			</div><br><br>
+  			<div class="form-row">
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="city" placeholder="City">
+  					<mat-error *ngIf="formSubmitted && f.city.errors" class="text-danger">
+                        <div *ngIf="f.city.errors.required">*Please enter city</div>
+                    </mat-error>
+  				</div>
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="state" placeholder="State">
+  					<mat-error *ngIf="formSubmitted && f.state.errors" class="text-danger">
+                        <div *ngIf="f.state.errors.required">*Please enter state</div>
+                    </mat-error>
+  				</div>
+  			</div><br><br>
+  			<div class="form-row">
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="zip" placeholder="Zip">
+  					<mat-error *ngIf="formSubmitted && f.zip.errors" class="text-danger">
+                        <div *ngIf="f.zip.errors.required">*Please enter zip</div>
+                    </mat-error>
+  				</div>
+  				<div class="col-5">
+  					<input type="text" class="form-control" formControlName="password" placeholder="Password">
+  					<mat-error *ngIf="formSubmitted && f.password.errors" class="text-danger">
+                        <div *ngIf="f.password.errors.required">*Please enter password</div>
+                    </mat-error>
+  				</div>
+  			</div><br>
+  			<div class="col-12">
+  				<button type="submit"  class="btn btn btn-success">Add Analyst</button>
+  			</div>
+  		</form>
+  	</div>
+  </div>
+
+  
