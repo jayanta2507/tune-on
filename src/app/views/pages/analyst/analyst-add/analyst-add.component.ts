@@ -53,9 +53,43 @@ export class AnalystAddComponent implements OnInit {
   }
 
   createAnalyst(){
-    this.formSubmitted = true;
+
+  this.formSubmitted = true;
     
-    if(this.addForm.invalid) return;
-  }
+      if(this.addForm.invalid) return;
+
+    let postData = {
+      title        : this.addForm.get('title').value,
+      name         : this.addForm.get('name').value,
+      email        : this.addForm.get('email').value,
+      phone        : this.addForm.get('phone').value,
+      organization : this.addForm.get('organization').value,
+      address      : this.addForm.get('address').value,
+      city         : this.addForm.get('city').value,
+      state        : this.addForm.get('state').value,
+      zip          : this.addForm.get('zip').value,
+      password     :this.addForm.get('password').value
+    }
+
+      this.subscriptions.push(
+        this.commonService.postAPICall({
+          url: 'user/add-analyst',
+          data: postData
+        }).subscribe((result)=>{
+          this.isLoading = false;``
+          if(result.status == 200) {
+            this.router.navigate(['/analyst-list']);
+           
+          }
+          else{
+            this.helperService.showError(result.msg);
+          }
+        },(err)=>{
+          this.isLoading = false;
+          this.helperService.showError(err.error.msg);
+        })
+      )
+    }
+
 
 }

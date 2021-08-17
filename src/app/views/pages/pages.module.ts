@@ -15,6 +15,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { AnalystDeatilsComponent } from './analyst/analyst-deatils/analyst-deatils.component';
+import { AnalystEditComponent } from './analyst/analyst-edit/analyst-edit.component';
 
 //import { HeaderComponent } from './header/header.component';
 
@@ -28,6 +30,8 @@ import { MatInputModule } from '@angular/material/input';
     ClientEditComponent,
     AnalystListComponent,
     AnalystAddComponent,
+    AnalystDeatilsComponent,
+    AnalystEditComponent,
     //HeaderComponent
   ],
   imports: [

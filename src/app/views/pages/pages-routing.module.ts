@@ -9,6 +9,8 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import { ClientEditComponent } from './client-edit/client-edit.component';
 import { AnalystListComponent } from './analyst/analyst-list/analyst-list.component';
 import { AnalystAddComponent } from './analyst/analyst-add/analyst-add.component';
+import { AnalystDeatilsComponent } from './analyst/analyst-deatils/analyst-deatils.component';
+import { AnalystEditComponent } from './analyst/analyst-edit/analyst-edit.component';
 
 const routes: Routes = [
     {
@@ -48,6 +50,16 @@ const routes: Routes = [
     {
       path: 'analyst-add',
       component: AnalystAddComponent,
+      canActivate: [AuthGuardService]
+    },
+       {
+      path: 'analyst-details/:id',
+      component: AnalystDeatilsComponent,
+      canActivate: [AuthGuardService]
+    },
+    {
+      path: 'analyst-edit/:id',
+      component: AnalystEditComponent,
       canActivate: [AuthGuardService]
     },
 

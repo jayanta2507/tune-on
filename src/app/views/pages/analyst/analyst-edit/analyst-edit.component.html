@@ -1,0 +1,54 @@
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Create New Client</h1>
+          </div>
+             </div>
+                  </div>
+                 <form [formGroup]="addForm"  (ngSubmit)="submitAnalyst()">
+                      <div class="form-row">
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="title"placeholder="Title">
+                       </div>
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="name" placeholder="Name">
+                       </div>
+                     </div><br><br>
+                     <div class="form-row">
+                       <div class="col-5">
+                       <input type="text" class="form-control" formControlName="email"  placeholder="Email Address">
+                       </div>
+                       <div class="col-5">
+                         
+  					<input type="text" class="form-control" formControlName="phone"  placeholder="Phone">
+                       </div>
+                     </div><br><br>
+                     <div class="form-row">
+                       <div class="col-5">
+                        <input type="text" class="form-control" formControlName="organization"  placeholder="organisation">
+  				
+                       </div>
+                       <div class="col-5">
+                         <input type="text" class="form-control" formControlName="address"  placeholder="Address">
+                       </div>
+                     </div><br><br>
+                       <div class="form-row">
+                       <div class="col-5">
+                        <input type="text" class="form-control" formControlName="city" placeholder="City">
+                       </div>
+                       <div class="col-5">
+                        <input type="text" class="form-control" formControlName="zip" placeholder="Zip">
+                       </div>
+                     </div><br><br>
+                      <div class="col-12">
+                    <button type="submit"  class="btn btn btn-success">Add Client</button>
+                    </div>
+                   </form>
+                        </div>
+                        </div>
+
+  
